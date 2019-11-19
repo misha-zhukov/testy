@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbSearchModule, NbActionsModule, NbButtonModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CoursesService } from './services/courses.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { HeaderComponent } from './components/header/header.component';
     NbEvaIconsModule,
     NbSearchModule,
     NbActionsModule,
-    NbButtonModule
+    NbButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
