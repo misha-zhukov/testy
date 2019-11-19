@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 import { ActivatedRoute } from '@angular/router';
+import { ICourse } from '../../models/ICourse';
+import { IQuestion } from '../../models/IQuestion';
 
 @Component({
   selector: 'app-question-stepper',
@@ -8,12 +10,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./question-stepper.component.scss']
 })
 export class QuestionStepperComponent implements OnInit {
+  course: ICourse;
+  public questions: IQuestion[] = [];
 
   constructor(private coursesService: CoursesService, private route: ActivatedRoute) { }
-  course: any;
 
   ngOnInit() {
-    this.coursesService.getOneCourse(this.route.snapshot.params['id']).subscribe(course => this.course = course);
+    this.coursesService.getOneCourse(this.route.snapshot.params['id']).subscribe(course => {
+      console.log(course);
+      this.course = course;
+      this.questions = course.questions;
+    });
   }
 
 }

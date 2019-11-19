@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IOption } from 'src/app/models/IOption';
 
 @Component({
   selector: 'app-question',
@@ -6,13 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
-  options = [
-    { value: 'This is value 1', label: 'Option 1' },
-    { value: 'This is value 2', label: 'Option 2' },
-    { value: 'This is value 3', label: 'Option 3' },
-    { value: 'This is value 4', label: 'Option 4' },
-  ];
+
   option;
+
+  @Input()
+  options: IOption[];
 
   constructor() { }
 

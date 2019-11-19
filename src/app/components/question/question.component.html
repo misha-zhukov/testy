@@ -1,14 +1,9 @@
-<nb-card>
-    <nb-card-header>Selected Option: {{ option }}</nb-card-header>
+<nb-card *ngIf="options">
     <nb-card-body>
-
       <nb-radio-group [(ngModel)]="option">
-        <nb-radio
-          *ngFor="let option of options"
-          [value]="option.value">
-          {{ option.label }}
+        <nb-radio *ngFor="let option of options" [value]="option.right">
+          {{ option.option }}
         </nb-radio>
       </nb-radio-group>
-
     </nb-card-body>
   </nb-card>
