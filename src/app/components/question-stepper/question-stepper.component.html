@@ -6,8 +6,9 @@
           <ng-template #labelOne></ng-template>
           <h4>{{question.title}}</h4>
           <p>{{question.description}}</p>
-          <button nbButton disabled nbStepperNext>prev</button>
-          <button nbButton nbStepperNext>next</button>
+          <div class="btn-next">
+            <button nbButton nbStepperNext>Next</button>
+          </div>
         </nb-step>
       </nb-stepper>
     </nb-card-body>
