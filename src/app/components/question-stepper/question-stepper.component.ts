@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
   selector: 'app-question-stepper',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionStepperComponent implements OnInit {
 
-  constructor() { }
+  constructor(private coursesService: CoursesService) { }
+  course: any;
 
   ngOnInit() {
+    this.coursesService.getOneCourse(1).subscribe(course => this.course = course);
   }
 
 }

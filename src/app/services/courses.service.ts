@@ -16,6 +16,11 @@ export class CoursesService {
       .pipe(catchError(this.handleError<ICourse[]>('getAllCourses', [])));
   }
 
+  getOneCourse(id: number): Observable<ICourse> {
+    return this.http.get<ICourse>(`/api/data/quiz/${id}`)
+      .pipe(catchError(this.handleError<ICourse>('getOneCourse')));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
