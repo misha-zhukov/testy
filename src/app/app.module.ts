@@ -4,16 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSearchModule, NbActionsModule, NbButtonModule } from '@nebular/theme';
+import { NbCardModule, NbThemeModule, NbLayoutModule, NbSearchModule, NbActionsModule, NbButtonModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoursesService } from './services/courses.service';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    CoursesListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { CoursesService } from './services/courses.service';
     NbSearchModule,
     NbActionsModule,
     NbButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    NbCardModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
