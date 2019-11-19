@@ -5,20 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbRadioModule, NbCardModule, NbThemeModule, NbLayoutModule, NbSearchModule, NbActionsModule,
-  NbButtonModule } from '@nebular/theme';
+  NbButtonModule, NbStepperModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoursesService } from './services/courses.service';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { QuestionComponent } from './components/question/question.component';
+import { QuestionStepperComponent } from './components/question-stepper/question-stepper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CoursesListComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionStepperComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { QuestionComponent } from './components/question/question.component';
     NbButtonModule,
     HttpClientModule,
     NbCardModule,
-    NbRadioModule
+    NbRadioModule,
+    NbStepperModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
