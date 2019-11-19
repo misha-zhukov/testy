@@ -1,6 +1,6 @@
 <nb-card>
+    <nb-card-header>{{course.title}}</nb-card-header>
     <nb-card-body>
-      {{course.title}}
       <nb-stepper orientation="horizontal">
         <nb-step *ngFor="let question of course.questions">
           <ng-template #labelOne></ng-template>

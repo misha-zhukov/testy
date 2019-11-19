@@ -13,6 +13,7 @@ import { CoursesService } from './services/courses.service';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { QuestionComponent } from './components/question/question.component';
 import { QuestionStepperComponent } from './components/question-stepper/question-stepper.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuestionStepperComponent } from './components/question-stepper/question
     HeaderComponent,
     CoursesListComponent,
     QuestionComponent,
-    QuestionStepperComponent
+    QuestionStepperComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

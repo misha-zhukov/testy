@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-question-stepper',
@@ -8,11 +9,11 @@ import { CoursesService } from '../../services/courses.service';
 })
 export class QuestionStepperComponent implements OnInit {
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(private coursesService: CoursesService, private route: ActivatedRoute) { }
   course: any;
 
   ngOnInit() {
-    this.coursesService.getOneCourse(1).subscribe(course => this.course = course);
+    this.coursesService.getOneCourse(this.route.snapshot.params['id']).subscribe(course => this.course = course);
   }
 
 }
