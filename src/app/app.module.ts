@@ -16,6 +16,7 @@ import { QuestionStepperComponent } from './components/question-stepper/question
 import { LandingComponent } from './components/landing/landing.component';
 import { ThemeModule } from './@theme/theme.module';
 import { AuthModule } from './@auth/auth.module';
+import { AdminModule } from './admin/admin.module';
 import { InitUserService } from './@theme/services/init-user.service';
 import { CoreModule } from './@core/core.module';
 
@@ -54,6 +55,7 @@ export function init_app(injector: Injector) {
     NbRadioModule,
     NbStepperModule,
     AuthModule.forRoot(),
+    AdminModule,
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
   ],
