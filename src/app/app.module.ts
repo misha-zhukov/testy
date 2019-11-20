@@ -14,6 +14,7 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 import { QuestionComponent } from './components/question/question.component';
 import { QuestionStepperComponent } from './components/question-stepper/question-stepper.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { AuthModule } from './@auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LandingComponent } from './components/landing/landing.component';
     HttpClientModule,
     NbCardModule,
     NbRadioModule,
-    NbStepperModule
+    NbStepperModule,
+    AuthModule.forRoot(),
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]

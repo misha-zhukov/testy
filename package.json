@@ -19,11 +19,14 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
+    "@nebular/auth": "^4.5.0",
     "@nebular/eva-icons": "4.5.0",
+    "@nebular/security": "^4.5.0",
     "@nebular/theme": "^4.5.0",
     "bootstrap": "^4.3.1",
     "eva-icons": "^1.1.1",
     "font-awesome": "^4.7.0",
+    "ng2-smart-table": "^1.5.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
@@ -31,6 +34,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.17",
     "@angular/cli": "~8.3.17",
+    "@angular/compiler": "^8.2.14",
     "@angular/compiler-cli": "~8.2.13",
     "@angular/language-service": "~8.2.13",
     "@schematics/angular": "~8.3.17",
