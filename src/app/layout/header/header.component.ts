@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NbSidebarService } from '@nebular/theme';
+import { LayoutService } from '../../services/layout.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input()
+  hasSidebar: boolean = false;
 
-  constructor() { }
+  constructor(private sidebarService: NbSidebarService) { }
 
   ngOnInit() {
+  }
+
+  toggleSidebar(): boolean {
+    this.sidebarService.toggle(true, 'menu-sidebar');
+
+    return false;
   }
 
 }

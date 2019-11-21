@@ -10,6 +10,7 @@ import {
   NbSidebarModule,
   NbButtonModule
 } from '@nebular/theme';
+import { NbIconModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent],
@@ -19,10 +20,10 @@ import {
     NbLayoutModule,
     NbSidebarModule,
     RouterModule,
-    NbButtonModule
+    NbButtonModule,
+    NbIconModule
   ],
   exports: [LayoutComponent]
 })
 export class LayoutModule {
-  hasSidebard: boolean = false;
  }

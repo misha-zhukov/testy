@@ -1,9 +1,9 @@
 <nb-layout windowMode>
   <nb-layout-header fixed>
-    <app-header></app-header>
+    <app-header [hasSidebar]="hasSidebar"></app-header>
   </nb-layout-header>
 
-  <nb-sidebar *ngIf="hasSidebard" class="menu-sidebar" tag="menu-sidebar" responsive start>
+  <nb-sidebar *ngIf="hasSidebar" class="menu-sidebar" tag="menu-sidebar" responsive start>
     <ng-content select="nb-menu"></ng-content>
   </nb-sidebar>
 

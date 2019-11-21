@@ -18,7 +18,7 @@ const routes: Routes = [
       .then(m => m.AdminModule),
       pathMatch: 'full'
   },
-  // { path: '', redirectTo: '/landing', pathMatch: 'full' },
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
 ];
 
 @NgModule({

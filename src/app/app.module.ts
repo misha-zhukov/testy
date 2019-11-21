@@ -4,13 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoursesService } from './services/courses.service';
 import {
   NbMenuModule,
   NbSidebarModule,
   NbThemeModule
 } from '@nebular/theme';
-
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { CoursesService } from './services/courses.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,13 @@ import {
     NbThemeModule.forRoot(
       {
         name: 'default',
-      })
+      }),
+      NbEvaIconsModule,
+      
   ],
-  providers: [CoursesService],
+  providers: [
+    CoursesService, 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
