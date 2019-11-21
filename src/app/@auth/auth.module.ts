@@ -69,7 +69,7 @@ const NB_MODULES = [
 ];
 
 export function filterInterceptorRequest(req: HttpRequest<any>): boolean {
-  return ['/auth/login', '/auth/sign-up', '/auth/request-pass', '/auth/˝refresh-token']
+  return ['/auth/login', '/auth/sign-up', '/auth/request-pass', '/auth/refresh-token']
     .some(url => req.url.includes(url));
 }
 

@@ -6,8 +6,8 @@
 
  @import '~bootstrap/scss/mixins/breakpoints';
  @import '~@nebular/theme/styles/global/breakpoints';
- @import '../../@theme/styles/themes';
-  
+ @import '../../styles/themes';
+ 
  @include nb-install-component() {
    display: flex;
    justify-content: space-between;
