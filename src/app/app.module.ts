@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbRadioModule, NbCardModule, NbThemeModule, NbLayoutModule, NbSearchModule, NbActionsModule,
   NbButtonModule, NbStepperModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoursesService } from './services/courses.service';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
@@ -19,6 +18,7 @@ import { AuthModule } from './@auth/auth.module';
 import { AdminModule } from './admin/admin.module';
 import { InitUserService } from './@theme/services/init-user.service';
 import { CoreModule } from './@core/core.module';
+import { LayoutModule } from './layout/layout.module';
 
 export function init_app(injector: Injector) {
   return () =>
@@ -33,7 +33,6 @@ export function init_app(injector: Injector) {
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     CoursesListComponent,
     QuestionComponent,
     QuestionStepperComponent,
@@ -55,9 +54,10 @@ export function init_app(injector: Injector) {
     NbRadioModule,
     NbStepperModule,
     AuthModule.forRoot(),
-    AdminModule,
+    AdminModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    LayoutModule
   ],
   providers: [CoursesService,
     {
