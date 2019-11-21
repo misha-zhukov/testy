@@ -7,7 +7,8 @@ import { RouterModule } from '@angular/router';
 import {
   NbCardModule,
   NbLayoutModule,
-  // NbSidebarModule
+  NbSidebarModule,
+  NbButtonModule
 } from '@nebular/theme';
 
 @NgModule({
@@ -16,9 +17,12 @@ import {
     CommonModule,
     NbCardModule,
     NbLayoutModule,
-    // NbSidebarModule,
-    RouterModule
+    NbSidebarModule,
+    RouterModule,
+    NbButtonModule
   ],
   exports: [LayoutComponent]
 })
-export class LayoutModule { }
+export class LayoutModule {
+  hasSidebard: boolean = false;
+ }
