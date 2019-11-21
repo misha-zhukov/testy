@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LandingComponent } from './components/landing/landing.component';
-import { QuestionStepperComponent } from './components/question-stepper/question-stepper.component';
 
 const routes: Routes = [
-  { path: 'landing', component: LandingComponent },
-  { path: 'quiz/:id', component: QuestionStepperComponent },
-  { path: '', redirectTo: '/landing', pathMatch: 'full' },
   {
-    path: 'auth',
-    loadChildren: () => import('./@auth/auth.module')
-      .then(m => m.AuthModule),
-  }
+    path: 'landing',
+    loadChildren: () => import('./landing/landing.module')
+      .then(m => m.LandingModule),
+  },
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
 ];
 
 @NgModule({
