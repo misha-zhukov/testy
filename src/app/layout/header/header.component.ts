@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
-import { LayoutService } from '../../services/layout.service';
 
 @Component({
   selector: 'app-header',
