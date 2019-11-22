@@ -8,9 +8,11 @@ import { NbMenuModule, NbCardModule, NbInputModule,
   NbButtonModule } from '@nebular/theme';
 import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
 import { FormsModule } from '@angular/forms';
+import { EditCourseComponent } from './admin-courses/edit-course/edit-course.component';
+import { AddCourseComponent } from './admin-courses/add-course/add-course.component';
 
 @NgModule({
-  declarations: [AdminComponent, AdminCoursesComponent],
+  declarations: [AdminComponent, AdminCoursesComponent, EditCourseComponent, AddCourseComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

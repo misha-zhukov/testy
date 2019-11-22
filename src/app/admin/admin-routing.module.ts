@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AdminComponent } from './admin.component';
 import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
+import { EditCourseComponent } from './admin-courses/edit-course/edit-course.component';
 
 const routes: Routes = [{
   path: '',
@@ -10,6 +11,10 @@ const routes: Routes = [{
     {
       path: 'courses',
       component: AdminCoursesComponent,
+    },
+    { 
+      path: 'edit-course/:id', 
+      component: EditCourseComponent 
     },
   ]
 },

@@ -1,24 +1,11 @@
+
 <div class="btn-add-new-container">
-    <button nbButton (click)="addNewCourse()" class="btn-add-new">Add new</button>
-  </div>
-
-<nb-card *ngFor="let course of courses">
-  <nb-card-body>
-    Title: <br>
-    <input nbInput placeholder="Title" [(ngModel)]="course.description">
-    <br>
-    <br>
-    Description: 
-    <br>
-    <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.title">
-    </textarea>
-    <br>
-    <br>
-    <div class="btn-submit-container">
-      <button *ngIf="course._id" nbButton class="btn-update">Update</button>
-      <button *ngIf="!course._id" nbButton class="btn-save">Save</button>
-    </div>
-  </nb-card-body>
-</nb-card>
-
-
+    <button nbButton [routerLink]="['/admin', 'add-course']" class="btn-add-new">Save</button>
+</div>
+<div *ngFor="let course of courses">
+<a [routerLink]="['/admin', 'edit-course', course._id]" style="text-decoration: none;">
+    <nb-card>
+      <nb-card-header >{{course.title}}</nb-card-header>
+    </nb-card>
+  </a>
+</div>

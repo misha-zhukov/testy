@@ -19,7 +19,7 @@ export class QuestionStepperComponent implements OnInit {
     this.coursesService.getOneCourse(this.route.snapshot.params['id']).subscribe(course => {
       console.log(course);
       this.course = course;
-      this.questions = course.questions;
+      // this.questions = course.questions;
     });
   }
 

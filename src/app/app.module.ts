@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   NbMenuModule,
   NbSidebarModule,
-  NbThemeModule
+  NbThemeModule,
+  NbToastrModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { CoursesService } from './services/courses.service';
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
         name: 'default',
       }),
     NbEvaIconsModule,
-    HttpClientModule
+    HttpClientModule,
+    NbToastrModule.forRoot()
   ],
   providers: [
     CoursesService, 

@@ -21,10 +21,19 @@ export class CoursesService {
       .pipe(catchError(this.handleError<ICourse>('getOneCourse')));
   }
 
+  getCourseById(id: number): Observable<ICourse> {
+    return this.http.get<ICourse>(`/api/data/course/${id}`)
+      .pipe(catchError(this.handleError<ICourse>('getCourseById')));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
     }
+  }
+
+  updateCourse(course: ICourse): Observable<any> {
+    return this.http.post('api/data/course/update', course);
   }
 }

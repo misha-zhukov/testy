@@ -1,0 +1,13 @@
+<nb-card-body *ngIf="course">
+  Title: 
+  <br>
+  <input nbInput placeholder="Title" [(ngModel)]="course.description">
+  <br>
+  <br>
+  Description: 
+  <br>
+  <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.title"></textarea>
+</nb-card-body>
+<div class="btn-save-container">
+    <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
+</div>
