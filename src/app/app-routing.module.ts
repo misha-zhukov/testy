@@ -5,20 +5,18 @@ const routes: Routes = [
   {
     path: 'landing',
     loadChildren: () => import('./landing/landing.module')
-      .then(m => m.LandingModule),
-      pathMatch: 'full'
+      .then(m => m.LandingModule)
   },{
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module')
-      .then(m => m.DashboardModule),
-      pathMatch: 'full'
+      .then(m => m.DashboardModule)
   },{
     path: 'admin',
     loadChildren: () => import('./admin/admin.module')
-      .then(m => m.AdminModule),
-      pathMatch: 'full'
+      .then(m => m.AdminModule)
   },
-  { path: '', redirectTo: '/landing', pathMatch: 'full' },
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
+  { path: '**', redirectTo: 'landing' },
 ];
 
 @NgModule({

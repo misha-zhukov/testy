@@ -1,11 +1,28 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AdminComponent } from './admin.component';
+import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
 
 const routes: Routes = [{
   path: '',
-  component: AdminComponent
-}];
+  component: AdminComponent,
+  children: [
+    {
+      path: 'courses',
+      component: AdminCoursesComponent,
+    },
+  ]
+},
+{
+  path: '',
+  redirectTo: 'courses',
+  pathMatch: 'full',
+},
+{
+  path: '**',
+  redirectTo: 'courses',
+},
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

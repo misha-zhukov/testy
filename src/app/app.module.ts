@@ -11,6 +11,7 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { CoursesService } from './services/courses.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,8 @@ import { CoursesService } from './services/courses.service';
       {
         name: 'default',
       }),
-      NbEvaIconsModule,
-      
+    NbEvaIconsModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService, 

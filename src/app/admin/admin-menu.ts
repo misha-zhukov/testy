@@ -15,7 +15,7 @@ export class AdminMenu {
       {
         title: 'Courses',
         icon: 'layout-outline',
-        link: '/courses'
+        link: '/admin/courses'
       },
     ];
 
