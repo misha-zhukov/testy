@@ -9,10 +9,11 @@ import { NbMenuModule, NbCardModule, NbInputModule,
 import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
 import { FormsModule } from '@angular/forms';
 import { EditCourseComponent } from './admin-courses/edit-course/edit-course.component';
-import { AddCourseComponent } from './admin-courses/add-course/add-course.component';
+import  { TinyMceComponent } from './admin-courses/edit-course/tiny-mce/tiny-mce.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
-  declarations: [AdminComponent, AdminCoursesComponent, EditCourseComponent, AddCourseComponent],
+  declarations: [AdminComponent, AdminCoursesComponent, EditCourseComponent, TinyMceComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -21,7 +22,8 @@ import { AddCourseComponent } from './admin-courses/add-course/add-course.compon
     NbCardModule,
     FormsModule,
     NbInputModule,
-    NbButtonModule
+    NbButtonModule,
+    EditorModule
   ],
   providers: [AdminMenu]
 })

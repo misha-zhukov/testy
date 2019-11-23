@@ -3,6 +3,7 @@ import { CoursesService } from 'src/app/services/courses.service';
 import { ActivatedRoute } from '@angular/router'
 import { ICourse } from '../../../models/ICourse';
 import { Course } from 'src/app/models/Course';
+import { Lesson } from 'src/app/models/Lesson';
 
 @Component({
   selector: 'app-edit-course',
@@ -20,7 +21,7 @@ export class EditCourseComponent implements OnInit {
     this.route.params.subscribe(params => {
         this.coursesService.getCourseById(params['id']).subscribe(course => 
           { 
-            this.course = course
+            this.course = course  
           });
       });
   }
@@ -30,5 +31,9 @@ export class EditCourseComponent implements OnInit {
       { 
         data
       });;
+  }
+
+  addLesson(event) {
+    this.course.lessons.unshift(new Lesson());
   }
 }

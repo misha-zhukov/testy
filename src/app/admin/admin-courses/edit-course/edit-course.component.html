@@ -1,13 +1,27 @@
+<div class="btn-save-container">
+    <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
+</div>
+
 <nb-card-body *ngIf="course">
   Title: 
   <br>
-  <input nbInput placeholder="Title" [(ngModel)]="course.description">
+  <input nbInput placeholder="Title" [(ngModel)]="course.title">
   <br>
   <br>
   Description: 
   <br>
-  <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.title"></textarea>
+  <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.description"></textarea>
 </nb-card-body>
+
 <div class="btn-save-container">
-    <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
+    <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
 </div>
+
+<nb-card *ngFor="let lesson of course.lessons">
+  <nb-card-body>
+      Title: 
+      <br>
+      <input nbInput placeholder="Title" [(ngModel)]="lesson.title">
+    <app-tiny-mce></app-tiny-mce>
+  </nb-card-body>
+</nb-card>

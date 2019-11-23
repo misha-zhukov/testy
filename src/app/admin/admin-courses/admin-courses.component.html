@@ -1,6 +1,10 @@
 
+<div class="btn-add-new-container" *ngIf="courses.length === 0">
+    No courses found
+</div>
+
 <div class="btn-add-new-container">
-    <button nbButton [routerLink]="['/admin', 'add-course']" class="btn-add-new">Save</button>
+    <button nbButton [routerLink]="['/admin', 'add-course']" class="btn-add-new">Add course</button>
 </div>
 <div *ngFor="let course of courses">
 <a [routerLink]="['/admin', 'edit-course', course._id]" style="text-decoration: none;">
