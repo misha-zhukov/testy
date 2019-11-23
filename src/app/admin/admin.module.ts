@@ -9,11 +9,10 @@ import { NbMenuModule, NbCardModule, NbInputModule,
 import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
 import { FormsModule } from '@angular/forms';
 import { EditCourseComponent } from './admin-courses/edit-course/edit-course.component';
-import  { TinyMceComponent } from './admin-courses/edit-course/tiny-mce/tiny-mce.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
-  declarations: [AdminComponent, AdminCoursesComponent, EditCourseComponent, TinyMceComponent],
+  declarations: [AdminComponent, AdminCoursesComponent, EditCourseComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
