@@ -1,0 +1,14 @@
+<nb-card *ngIf="course">
+  <nb-card-header>{{course.title}}</nb-card-header>
+  <nb-card-body>
+    {{course.description}}
+  </nb-card-body>
+  <nb-card-footer>
+    <nb-card *ngFor="let lesson of course.lessons">
+      <nb-card-header>{{lesson.title}}</nb-card-header>
+    </nb-card>
+  </nb-card-footer>
+</nb-card>
+<div class="btn-container">
+    <button nbButton (click)="deleteLesson($event)" class="btn-delete-lesson" hero status="primary">Enroll</button>
+</div>

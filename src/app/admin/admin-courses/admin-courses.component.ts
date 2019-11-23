@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 import { ICourse } from 'src/app/models/ICourse';
 import { Course } from 'src/app/models/Course';
-import { Observable } from 'rxjs';
 import { NbToastrService } from '@nebular/theme';
 
 @Component({

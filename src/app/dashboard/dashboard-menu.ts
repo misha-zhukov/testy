@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class AdminMenu {
+export class DashboardMenu {
   getMenu(): Observable<NbMenuItem[]> {
     var menu: NbMenuItem[] = [
       {
