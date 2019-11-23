@@ -32,7 +32,7 @@ export class CourseComponent implements OnInit {
       return {
         title: lesson.title,
         icon: 'layout-outline',
-        link: '/dashboard/courses'
+        link: `/course/${this.course._id}/lesson/${lesson._id}`
       }
     });
     this.menu = menu;

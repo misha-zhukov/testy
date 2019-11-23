@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { CourseRoutingModule } from './course-routing.module';
+import { LessonComponent } from './lesson/lesson.component';
 
 @NgModule({
-  declarations: [CourseComponent, CourseContentComponent],
+  declarations: [CourseComponent, CourseContentComponent, LessonComponent],
   imports: [
     CommonModule,
     LayoutModule,

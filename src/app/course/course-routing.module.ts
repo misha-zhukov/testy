@@ -1,17 +1,17 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CourseComponent } from './course.component';
-import { CourseContentComponent } from './course-content/course-content.component';
+import { LessonComponent } from './lesson/lesson.component';
 
 const routes: Routes = [{
-  path: ':id',
   component: CourseComponent,
-  // children: [
-  //   {
-  //     path: 'content',
-  //     component: CourseContentComponent,
-  //   }
-  // ]
+  path: ':id',
+  children: [
+    {
+      path: 'lesson/:id',
+      component: LessonComponent,
+    },
+  ]
 },
 {
   path: '',
