@@ -1,4 +1,4 @@
-<div class="btn-save-container">
+<div class="btn-container">
     <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
 </div>
 
@@ -13,7 +13,7 @@
   <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.description"></textarea>
 </nb-card-body>
 
-<div class="btn-save-container">
+<div class="btn-container">
     <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
 </div>
 
@@ -22,6 +22,9 @@
       Title: 
       <br>
       <input nbInput placeholder="Title" [(ngModel)]="lesson.title">
-    <app-tiny-mce></app-tiny-mce>
+      <editor [(ngModel)]="lesson.data" [init]="tinymceinit"></editor>
+      <div class="btn-container">
+          <button nbButton hero (click)="deleteLesson($event)" class="btn-delete-lesson" status="danger">Delete</button>
+      </div>
   </nb-card-body>
 </nb-card>
