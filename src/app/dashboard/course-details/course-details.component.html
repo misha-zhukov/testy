@@ -10,5 +10,5 @@
   </nb-card-footer>
 </nb-card>
 <div class="btn-container">
-    <button nbButton (click)="deleteLesson($event)" class="btn-delete-lesson" hero status="primary">Enroll</button>
+    <button nbButton [routerLink]="['/course', course._id]" hero status="primary">Enroll</button>
 </div>
