@@ -1,6 +1,6 @@
 <nb-card *ngIf="lesson">
-    <nb-card-body>
-      {{lesson.title}}
-    </nb-card-body>
-  </nb-card>
+  <nb-card-header>{{lesson.title}}</nb-card-header>
+  <nb-card-body [innerHTML]="lesson.data">
+  </nb-card-body>
+</nb-card>
   
