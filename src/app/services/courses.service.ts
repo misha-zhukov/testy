@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
 import { catchError} from 'rxjs/operators';
 import { ICourse } from '../models/ICourse';
+import { ILesson } from '../models/ILesson';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,19 @@ export class CoursesService {
       .pipe(catchError(this.handleError<ICourse[]>('getAllCourses', [])));
   }
 
-  getOneCourse(id: number): Observable<ICourse> {
+  getOneCourse(id: string): Observable<ICourse> {
     return this.http.get<ICourse>(`/api/data/quiz/${id}`)
       .pipe(catchError(this.handleError<ICourse>('getOneCourse')));
   }
 
-  getCourseById(id: number): Observable<ICourse> {
+  getCourseById(id: string): Observable<ICourse> {
     return this.http.get<ICourse>(`/api/data/course/${id}`)
       .pipe(catchError(this.handleError<ICourse>('getCourseById')));
+  }
+
+  getLessonById(idCourse: string, idLesson: string): Observable<ILesson> {
+    return this.http.get<ILesson>(`/api/data/course/${idCourse}/lesson/${idLesson}`)
+      .pipe(catchError(this.handleError<ILesson>('getLessonById')));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

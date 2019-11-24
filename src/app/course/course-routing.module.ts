@@ -5,10 +5,10 @@ import { LessonComponent } from './lesson/lesson.component';
 
 const routes: Routes = [{
   component: CourseComponent,
-  path: ':id',
+  path: ':id-course',
   children: [
     {
-      path: 'lesson/:id',
+      path: 'lesson/:id-lesson',
       component: LessonComponent,
     },
   ]

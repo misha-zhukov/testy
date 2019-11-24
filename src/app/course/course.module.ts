@@ -20,6 +20,6 @@ import { LessonComponent } from './lesson/lesson.component';
     NbInputModule,
     NbButtonModule,
     CourseRoutingModule
-  ],
+  ]
 })
 export class CourseModule { }

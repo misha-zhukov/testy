@@ -13,6 +13,7 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { CoursesService } from './services/courses.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CourseDataService } from './services/course-data.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     CoursesService, 
+    CourseDataService
   ],
   bootstrap: [AppComponent]
 })
