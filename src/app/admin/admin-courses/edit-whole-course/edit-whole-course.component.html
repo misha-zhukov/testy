@@ -43,7 +43,7 @@ Lessons:
       <input nbInput placeholder="Question" [(ngModel)]="step.question">
 
       <div *ngFor="let option of step.options">
-        <input nbInput placeholder="Option" [(ngModel)]="option.question">
+        <input nbInput placeholder="Option" [(ngModel)]="option.option">
         <nb-toggle [(ngModel)]="option.right"></nb-toggle>
       </div>
 

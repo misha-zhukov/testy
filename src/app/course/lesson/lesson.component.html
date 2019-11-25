@@ -1,6 +1,32 @@
-<nb-card *ngIf="lesson">
-  <nb-card-header>{{lesson.title}}</nb-card-header>
-  <nb-card-body [innerHTML]="lesson.data">
-  </nb-card-body>
-</nb-card>
-  
+   <nb-card *ngIf="lesson">
+     <nb-card-header>{{lesson.title}}</nb-card-header>
+      <nb-card-body>
+        <nb-stepper orientation="horizontal">
+          <nb-step *ngFor="let step of lesson.steps">
+              <!-- <nb-card>
+                <nb-card-body [innerHTML]="step.content">
+                  </nb-card-body>
+                </nb-card> -->
+                    <div [innerHTML]="step.content">
+                    </div>
+            <nb-card *ngIf="step.question">
+              <nb-card-body>
+                {{step.question}}
+                <ul style="list-style-type:none">
+                  <li  *ngFor="let option of step.options">
+                    <nb-checkbox status="primary">
+                      {{option.option}}
+                    </nb-checkbox>
+                </li>
+              </ul>
+              </nb-card-body>
+            </nb-card>
+
+            <div class="button-center-container">
+              <button nbButton disabled nbStepperNext class="button">prev</button>
+              <button nbButton nbStepperNext class="button">next</button>
+            </div>
+          </nb-step>
+        </nb-stepper>
+      </nb-card-body>
+    </nb-card>
