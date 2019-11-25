@@ -9,6 +9,8 @@ import { NbSidebarService } from '@nebular/theme';
 export class HeaderComponent implements OnInit {
   @Input()
   hasSidebar: boolean = false;
+  @Input()
+  hasToggleSidebar: boolean = true;
 
   constructor(private sidebarService: NbSidebarService) { }
 
