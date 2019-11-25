@@ -1,7 +1,6 @@
-import { IOption } from './IOption';
+import { IOption } from "./IOption";
 
 export interface IQuestion {
-  title: string;
-  description: string;
+  question: string;
   options: IOption[];
 }

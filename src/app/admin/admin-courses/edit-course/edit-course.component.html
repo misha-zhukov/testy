@@ -1,31 +1,27 @@
 <div class="btn-container">
-    <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
+  <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
 </div>
 
 <nb-card *ngIf="course">
   <nb-card-body>
-    Title: 
+    Title:
     <br>
     <input nbInput placeholder="Title" [(ngModel)]="course.title">
     <br>
     <br>
-    Description: 
+    Description:
     <br>
     <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.description"></textarea>
   </nb-card-body>
 </nb-card>
 <div class="btn-container">
-    <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
+  <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
 </div>
 
-<nb-card *ngFor="let lesson of course.lessons">
-  <nb-card-body>
-      Title: 
-      <br>
-      <input nbInput placeholder="Title" [(ngModel)]="lesson.title">
-      <editor [(ngModel)]="lesson.data" [init]="tinymceinit"></editor>
-      <div class="btn-container">
-          <button nbButton hero (click)="deleteLesson($event)" class="btn-delete-lesson" status="danger">Delete</button>
-      </div>
-  </nb-card-body>
-</nb-card>
+<div *ngFor="let lesson of course.lessons">
+  <a [routerLink]="['/admin', 'edit-course', course._id, 'edit-lesson', 'lesson._id']" style="text-decoration: none;">
+    <nb-card>
+      <nb-card-header>{{lesson.title}}</nb-card-header>
+    </nb-card>
+  </a>
+</div>

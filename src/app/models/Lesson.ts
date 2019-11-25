@@ -1,7 +1,8 @@
-import { ILesson } from './ILesson';
+import { ILesson } from "./ILesson";
+import { IStep } from "./IStep";
 
 export class Lesson implements ILesson {
   _id: string;
-  title: string;  
-  data: any;
+  title: string;
+  steps: IStep[];
 }
