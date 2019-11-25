@@ -2,7 +2,7 @@
      <nb-card-header>{{lesson.title}}</nb-card-header>
       <nb-card-body>
         <nb-stepper orientation="horizontal">
-          <nb-step *ngFor="let step of lesson.steps">
+          <nb-step *ngFor="let step of lesson.steps; let i = index">
               <!-- <nb-card>
                 <nb-card-body [innerHTML]="step.content">
                   </nb-card-body>
@@ -14,7 +14,7 @@
                 {{step.question}}
                 <ul style="list-style-type:none">
                   <li  *ngFor="let option of step.options">
-                    <nb-checkbox status="primary">
+                    <nb-checkbox (checkedChange)="toggleCheckbox(option)" status="primary">
                       {{option.option}}
                     </nb-checkbox>
                 </li>
@@ -22,10 +22,20 @@
               </nb-card-body>
             </nb-card>
 
-            <div class="button-center-container">
+            <div *ngIf="(lesson.steps.length-1) !== i" class="button-center-container">
               <button nbButton disabled nbStepperNext class="button">prev</button>
               <button nbButton nbStepperNext class="button">next</button>
             </div>
+            <div *ngIf="(lesson.steps.length-1) === i" class="button-center-container">
+              <button *ngIf="hasQuizes()" (click)="submit()" nbButton nbStepperNext class="button" hero status="success">Submit</button>
+              <button *ngIf="!hasQuizes()" (click)="finish()" nbButton class="button" hero status="success">Finish</button>
+            </div>
+          </nb-step>
+          <nb-step *ngIf="hasQuizes()">
+            Your result is: {{finalResultPct}}
+            <div class="button-center-container">
+                <button (click)="finish()" nbButton class="button" hero status="success">Finish</button>
+              </div>
           </nb-step>
         </nb-stepper>
       </nb-card-body>
