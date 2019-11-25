@@ -42,4 +42,8 @@ export class CoursesService {
   updateCourse(course: ICourse): Observable<any> {
     return this.http.post('api/data/course/update', course);
   }
+
+  updateLesson(lesson: ILesson): Observable<any> {
+    return this.http.post('api/data/lesson/update', lesson);
+  }
 }

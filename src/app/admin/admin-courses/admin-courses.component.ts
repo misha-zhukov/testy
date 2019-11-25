@@ -12,18 +12,17 @@ import { NbToastrService } from '@nebular/theme';
 export class AdminCoursesComponent implements OnInit {
   courses: ICourse[] = [];
 
-  constructor(private coursesService: CoursesService,
-    private toasterService: NbToastrService) { }
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit() {
     this.coursesService.getAllCourses()
     .subscribe(courses => {
-      this.courses = courses
+      this.courses = courses;
     });
   }
 
-  addNewCourse(){
-    this.courses.unshift(new Course())
+  addCourse(){
+    this.courses.unshift(new Course());
   }
 
   // saveChanges(event) {

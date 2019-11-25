@@ -1,0 +1,56 @@
+<div class="btn-container">
+  <button nbButton (click)="saveCourse($event)" class="btn-save">Save</button>
+</div>
+
+<nb-card *ngIf="course">
+  <nb-card-body>
+    Title:
+    <br>
+    <input nbInput placeholder="Title" [(ngModel)]="course.title">
+    <br>
+    <br>
+    Description:
+    <br>
+    <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.description"></textarea>
+  </nb-card-body>
+</nb-card>
+
+<div class="btn-container">
+  <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
+</div>
+
+Lessons:
+  <nb-card *ngFor="let lesson of course?.lessons">
+    <nb-card-body>
+        lesson:
+      <br>
+      <input nbInput placeholder="Title" [(ngModel)]="lesson.title">
+    </nb-card-body>
+    <div class="btn-container">
+      <button nbButton (click)="addStep(lesson)" class="btn-add-step">Add step</button>
+    </div>
+
+  <nb-card *ngFor="let step of lesson?.steps">
+    <nb-card-body>
+      Title:
+      <br>
+      <input nbInput placeholder="Title" [(ngModel)]="step.title">
+      <br>
+      <editor [(ngModel)]="step.content" [init]="tinymceinit"></editor>
+      <div class="btn-container">
+          <button nbButton (click)="addOption(step)" class="btn-add-step">Add option</button>
+      </div>
+      <input nbInput placeholder="Question" [(ngModel)]="step.question">
+
+      <div *ngFor="let option of step.options">
+        <input nbInput placeholder="Option" [(ngModel)]="option.question">
+        <nb-toggle [(ngModel)]="option.right"></nb-toggle>
+      </div>
+
+      <div class="btn-container">
+        <button nbButton hero class="btn-delete-step" status="danger">Delete</button>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</nb-card>
+

@@ -3,11 +3,15 @@
     No courses found
 </div>
 
+<!-- <div class="btn-add-new-container">
+    <button nbButton [routerLink]="['/admin', 'edit-course']" class="btn-add-new">Add course</button>
+</div> -->
 <div class="btn-add-new-container">
-    <button nbButton [routerLink]="['/admin', 'add-course']" class="btn-add-new">Add course</button>
+  <button nbButton [routerLink]="['/admin', 'edit-whole-course']" class="btn-add-new">Add course</button>
 </div>
 <div *ngFor="let course of courses">
-<a [routerLink]="['/admin', 'edit-course', course._id]" style="text-decoration: none;">
+<!-- <a [routerLink]="['/admin', 'edit-course', course._id]" style="text-decoration: none;"> -->
+<a [routerLink]="['/admin', 'edit-whole-course', course._id]" style="text-decoration: none;">
     <nb-card>
       <nb-card-header >{{course.title}}</nb-card-header>
     </nb-card>

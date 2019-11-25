@@ -1,8 +1,9 @@
 import { IStep } from "./IStep";
-import { IQuestion } from "./IQuestion";
+import { IOption } from "./IOption";
 
 export class Step implements IStep {
+  question: string;
+  options: IOption[] = [];
   title: string;
   content: any;
-  quiz: IQuestion;
 }

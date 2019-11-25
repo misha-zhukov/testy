@@ -16,7 +16,8 @@ export class EditCourseComponent implements OnInit {
     private courseDataService: CourseDataService,
     private coursesService: CoursesService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+  }
 
   get course(): ICourse {
     return this.courseDataService.course;
@@ -27,9 +28,14 @@ export class EditCourseComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.coursesService.getCourseById(params["id"]).subscribe(course => {
-        this.course = course;
-      });
+      if("id" in params) {
+        this.coursesService.getCourseById(params["id"]).subscribe(course => {
+          this.course = course;
+        });
+      } else {
+        this.course = new Course();
+        this.course.lessons = [];
+      }
     });
   }
 

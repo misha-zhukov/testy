@@ -4,6 +4,7 @@ import { CourseDataService } from "src/app/services/course-data.service";
 import { ActivatedRoute } from "@angular/router";
 import { CoursesService } from "src/app/services/courses.service";
 import { Step } from "src/app/models/Step";
+import { Lesson } from 'src/app/models/Lesson';
 
 @Component({
   selector: "app-edit-lesson",
@@ -30,6 +31,9 @@ export class EditLessonComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.parent.params.subscribe(courseParams => {
       this.activatedRoute.params.subscribe(lessonParams => {
+        if(!("id-lesson" in courseParams)) {
+          this.lesson = new Lesson();
+        }
         if (
           this.courseDataService.course &&
           this.courseDataService.course._id === courseParams["id-course"]

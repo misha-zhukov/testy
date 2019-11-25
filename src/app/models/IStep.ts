@@ -1,7 +1,9 @@
 import { IQuestion } from "./IQuestion";
+import { IOption } from './IOption';
 
 export interface IStep {
   title: string;
-  content: any;
-  quiz: IQuestion;
+  content: string;
+  question: string;
+  options: IOption[];
 }

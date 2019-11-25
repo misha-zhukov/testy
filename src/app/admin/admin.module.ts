@@ -8,20 +8,23 @@ import {
   NbMenuModule,
   NbCardModule,
   NbInputModule,
-  NbButtonModule
+  NbButtonModule,
+  NbToggleModule
 } from "@nebular/theme";
 import { AdminCoursesComponent } from "./admin-courses/admin-courses.component";
 import { FormsModule } from "@angular/forms";
 import { EditCourseComponent } from "./admin-courses/edit-course/edit-course.component";
 import { EditorModule } from "@tinymce/tinymce-angular";
 import { EditLessonComponent } from "./admin-courses/edit-course/edit-lesson/edit-lesson.component";
+import { EditWholeCourseComponent } from './admin-courses/edit-whole-course/edit-whole-course.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     AdminCoursesComponent,
     EditCourseComponent,
-    EditLessonComponent
+    EditLessonComponent,
+    EditWholeCourseComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +35,8 @@ import { EditLessonComponent } from "./admin-courses/edit-course/edit-lesson/edi
     FormsModule,
     NbInputModule,
     NbButtonModule,
-    EditorModule
+    EditorModule,
+    NbToggleModule
   ],
   providers: [AdminMenu]
 })

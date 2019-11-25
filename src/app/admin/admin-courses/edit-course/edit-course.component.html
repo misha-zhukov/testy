@@ -14,11 +14,11 @@
     <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.description"></textarea>
   </nb-card-body>
 </nb-card>
-<div class="btn-container">
-  <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
+<div *ngIf="course?._id" class="btn-container">
+  <button nbButton [routerLink]="['/admin', 'edit-course', course._id, 'edit-lesson']" class="btn-add-lesson">Add lesson</button>
 </div>
 
-<div *ngFor="let lesson of course.lessons">
+<div *ngFor="let lesson of course?.lessons">
   <a [routerLink]="['/admin', 'edit-course', course._id, 'edit-lesson', 'lesson._id']" style="text-decoration: none;">
     <nb-card>
       <nb-card-header>{{lesson.title}}</nb-card-header>
