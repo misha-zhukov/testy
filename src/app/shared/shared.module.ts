@@ -8,12 +8,13 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { NgxValidationMessageComponent } from "./validation-message/validation-message.component";
+import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 
 const COMPONENTS = [NgxValidationMessageComponent];
 
 @NgModule({
   imports: [FormsModule, CommonModule],
   exports: [...COMPONENTS],
-  declarations: [...COMPONENTS]
+  declarations: [...COMPONENTS, ListCoursesComponent]
 })
 export class SharedModule {}

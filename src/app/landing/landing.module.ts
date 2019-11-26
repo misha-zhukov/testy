@@ -13,9 +13,10 @@ import {
   NbCheckboxModule,
   NbIconModule
 } from "@nebular/theme";
+import { LandingContentComponent } from './landing-content/landing-content.component';
 
 @NgModule({
-  declarations: [LandingComponent],
+  declarations: [LandingComponent, LandingContentComponent],
   imports: [
     CommonModule,
     LandingRoutingModule,
