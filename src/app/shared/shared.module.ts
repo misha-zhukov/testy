@@ -9,12 +9,13 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { NgxValidationMessageComponent } from "./validation-message/validation-message.component";
 import { ListCoursesComponent } from './components/list-courses/list-courses.component';
+import { PricingComponent } from './components/pricing/pricing.component';
 
 const COMPONENTS = [NgxValidationMessageComponent];
 
 @NgModule({
   imports: [FormsModule, CommonModule],
   exports: [...COMPONENTS],
-  declarations: [...COMPONENTS, ListCoursesComponent]
+  declarations: [...COMPONENTS, ListCoursesComponent, PricingComponent]
 })
 export class SharedModule {}
