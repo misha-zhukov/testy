@@ -1,15 +1,34 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LandingComponent } from './landing.component';
-import { LandingRoutingModule } from './landing-routing.module';
-import { LayoutModule } from '../layout/layout.module';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { LandingComponent } from "./landing.component";
+import { LandingRoutingModule } from "./landing-routing.module";
+import { LayoutModule } from "../layout/layout.module";
+import { SharedModule } from "../shared/shared.module";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {
+  NbCardModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbButtonModule,
+  NbInputModule,
+  NbCheckboxModule,
+  NbIconModule
+} from "@nebular/theme";
+import { NgxLoginComponent } from "./login/login.component";
 
 @NgModule({
-  declarations: [LandingComponent],
+  declarations: [LandingComponent, NgxLoginComponent],
   imports: [
     CommonModule,
     LandingRoutingModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NbInputModule,
+    SharedModule,
+    NbLayoutModule,
+    NbCheckboxModule,
+    NbIconModule
   ]
 })
-export class LandingModule { }
+export class LandingModule {}

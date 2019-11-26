@@ -1,24 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { NgModule } from "@angular/core";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   NbMenuModule,
   NbSidebarModule,
   NbThemeModule,
   NbToastrModule
-} from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { CoursesService } from './services/courses.service';
-import { HttpClientModule } from '@angular/common/http';
-import { CourseDataService } from './services/course-data.service';
+} from "@nebular/theme";
+import { NbEvaIconsModule } from "@nebular/eva-icons";
+import { CoursesService } from "./services/courses.service";
+import { HttpClientModule } from "@angular/common/http";
+import { CourseDataService } from "./services/course-data.service";
+import { InitUserService } from "./services/init-user.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,18 +25,14 @@ import { CourseDataService } from './services/course-data.service';
     BrowserAnimationsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
-    NbThemeModule.forRoot(
-      {
-        name: 'default',
-      }),
+    NbThemeModule.forRoot({
+      name: "default"
+    }),
     NbEvaIconsModule,
     HttpClientModule,
     NbToastrModule.forRoot()
   ],
-  providers: [
-    CoursesService, 
-    CourseDataService
-  ],
+  providers: [CoursesService, CourseDataService, InitUserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

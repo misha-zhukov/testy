@@ -1,2 +1,13 @@
-<app-layout></app-layout>
-<p>landing works!</p>
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <app-header [hasSidebar]="hasSidebar" [hasToggleSidebar]="hasToggleSidebar"></app-header>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <ngx-login></ngx-login>
+    <!-- <ng-content select="router-outlet"></ng-content> -->
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  </nb-layout-footer>
+</nb-layout>
