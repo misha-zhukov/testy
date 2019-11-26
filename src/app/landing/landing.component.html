@@ -3,10 +3,21 @@
     <app-header [hasSidebar]="false" [hasToggleSidebar]="false"></app-header>
   </nb-layout-header>
 
-  <nb-layout-column>
-      <nb-card>
-      <nb-card-body>
+  <nb-layout-column class="container">
+    <div class="intro-container">
+      <div class="collage-container">
+          <div class="title-container">
+            <h1 class="title-text">
+              Join us to Master
+              <br>
+              Software QA
+            </h1>
+          </div>
+            <img class="title-bg" src="assets/img/landing.webp">
+            <img class="title-bg2" src="assets/img/landing2.svg">
+      </div>
 
+      <div class="form-container">
         <div [formGroup]="loginForm" aria-labelledby="title">
           <div class="form-control-group">
            <span class="label-with-link">
@@ -24,7 +35,7 @@
             <span class="label-with-link">
               <label class="label" for="input-password">Password:</label>
             </span>
-            <input  nbInput
+            <input nbInput
                     fullWidth
                     id="input-password"
                     formControlName="password"
@@ -34,13 +45,12 @@
           </div>
 
 
-          <button nbButton fullWidth status="success" size="small" class="button">
+          <button nbButton fullWidth status="success" size="medium" class="button button-start">
             Start testing now
           </button>
         </div>
-
-        </nb-card-body>
-    </nb-card>
+  </div>
+</div>
 <!--
         <section *ngIf="socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
           or enter with:
