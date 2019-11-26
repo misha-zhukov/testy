@@ -1,13 +1,16 @@
 <div class="header-container">
-    <div class="logo-container">
-      <a *ngIf="hasSidebar && hasToggleSidebar" (click)="toggleSidebar()" href="#" class="sidebar-toggle">
-          <nb-icon icon="menu-2-outline"></nb-icon>
-      </a>
-      <a class="logo" href="#">testy</a>
-    </div>
+  <div class="logo-container">
+    <a *ngIf="hasSidebar && hasToggleSidebar" (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#">testy</a>
   </div>
+  <a [routerLink]="['/auth/login']" status="basic" class="header-link">Catalog</a>
+  <a [routerLink]="['/auth/login']" status="basic" class="header-link">Pricing</a>
+</div>
 
-  <div class="header-container">
-    <button nbButton [routerLink]="['/auth/login']" status="basic" class="btn-login">Log in</button>
-    <button nbButton hero [routerLink]="['/auth/register']" class="btn-signup">Sign up</button>
-  </div>
+<div class="header-container">
+  <button nbButton outline status="primary" class="header-item">Upgrade to Pro</button>
+  <b><a [routerLink]="['/auth/login']" status="basic" class="header-item">Log in</a></b>
+  <button nbButton [routerLink]="['/auth/register']" class="header-item">Sign up</button>
+</div>
