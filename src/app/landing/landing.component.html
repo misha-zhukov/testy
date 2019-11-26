@@ -1,10 +1,70 @@
 <nb-layout windowMode>
   <nb-layout-header fixed>
-    <app-header [hasSidebar]="hasSidebar" [hasToggleSidebar]="hasToggleSidebar"></app-header>
+    <app-header [hasSidebar]="false" [hasToggleSidebar]="false"></app-header>
   </nb-layout-header>
 
   <nb-layout-column>
-    <ngx-login></ngx-login>
+      <nb-card>
+      <nb-card-body>
+
+        <div [formGroup]="loginForm" aria-labelledby="title">
+          <div class="form-control-group">
+           <span class="label-with-link">
+                <label class="label" for="input-password">Email:</label>
+              </span>
+            <input  nbInput
+                    fullWidth
+                    id="input-email"
+                    formControlName="email"
+                    >
+            <ngx-validation-message label="Email address"></ngx-validation-message>
+          </div>
+
+          <div class="form-control-group">
+            <span class="label-with-link">
+              <label class="label" for="input-password">Password:</label>
+            </span>
+            <input  nbInput
+                    fullWidth
+                    id="input-password"
+                    formControlName="password"
+                    type="password"
+                    placeholder="Password">
+            <ngx-validation-message label="Password"></ngx-validation-message>
+          </div>
+
+
+          <button nbButton fullWidth status="success" size="small" class="button">
+            Start testing now
+          </button>
+        </div>
+
+        </nb-card-body>
+    </nb-card>
+<!--
+        <section *ngIf="socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
+          or enter with:
+          <div class="socials">
+            <ng-container *ngFor="let socialLink of socialLinks">
+              <a *ngIf="socialLink.link"
+                 [routerLink]="socialLink.link"
+                 [attr.target]="socialLink.target"
+                 [attr.class]="socialLink.icon"
+                 [class.with-icon]="socialLink.icon">
+                <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
+                <ng-template #title>{{ socialLink.title }}</ng-template>
+              </a>
+              <a *ngIf="socialLink.url"
+                 [attr.href]="socialLink.url"
+                 [attr.target]="socialLink.target"
+                 [attr.class]="socialLink.icon"
+                 [class.with-icon]="socialLink.icon">
+                <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
+                <ng-template #title>{{ socialLink.title }}</ng-template>
+              </a>
+            </ng-container>
+          </div>
+        </section> -->
     <!-- <ng-content select="router-outlet"></ng-content> -->
   </nb-layout-column>
 

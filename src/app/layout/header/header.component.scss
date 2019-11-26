@@ -13,6 +13,10 @@
   justify-content: space-between;
   width: 100%;
 
+  .button {
+    text-transform: none;
+  }
+
   .logo-container {
     display: flex;
     align-items: center;

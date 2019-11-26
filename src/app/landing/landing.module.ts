@@ -8,16 +8,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   NbCardModule,
   NbLayoutModule,
-  NbSidebarModule,
   NbButtonModule,
   NbInputModule,
   NbCheckboxModule,
   NbIconModule
 } from "@nebular/theme";
-import { NgxLoginComponent } from "./login/login.component";
 
 @NgModule({
-  declarations: [LandingComponent, NgxLoginComponent],
+  declarations: [LandingComponent],
   imports: [
     CommonModule,
     LandingRoutingModule,
@@ -28,7 +26,9 @@ import { NgxLoginComponent } from "./login/login.component";
     SharedModule,
     NbLayoutModule,
     NbCheckboxModule,
-    NbIconModule
+    NbIconModule,
+    NbCardModule,
+    NbButtonModule
   ]
 })
 export class LandingModule {}

@@ -14,7 +14,6 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { CoursesService } from "./services/courses.service";
 import { HttpClientModule } from "@angular/common/http";
 import { CourseDataService } from "./services/course-data.service";
-import { InitUserService } from "./services/init-user.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +31,7 @@ import { InitUserService } from "./services/init-user.service";
     HttpClientModule,
     NbToastrModule.forRoot()
   ],
-  providers: [CoursesService, CourseDataService, InitUserService],
+  providers: [CoursesService, CourseDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
