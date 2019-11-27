@@ -10,11 +10,14 @@ import { CommonModule } from "@angular/common";
 import { NgxValidationMessageComponent } from "./validation-message/validation-message.component";
 import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import {
+  NbCardModule,
+} from "@nebular/theme";
 
 const COMPONENTS = [NgxValidationMessageComponent];
 
 @NgModule({
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, NbCardModule],
   exports: [...COMPONENTS],
   declarations: [...COMPONENTS, ListCoursesComponent, PricingComponent]
 })

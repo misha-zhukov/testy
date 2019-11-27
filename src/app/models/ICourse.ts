@@ -6,4 +6,5 @@ export interface ICourse {
   description: string;
   imgUri: string;
   lessons: ILesson[];
+  img: string;
 }

@@ -1,1 +1,18 @@
-<p>list-courses works!</p>
+
+<div class="btn-add-new-container" *ngIf="courses?.length === 0">
+    No courses found
+</div>
+
+<div *ngFor="let course of courses">
+<!-- <a [routerLink]="['/admin', 'edit-whole-course', course._id]" style="text-decoration: none;"> -->
+    <nb-card class="course-list-card">
+      <nb-card-body class="course-list-card-body">
+          <img *ngIf="course.img" [src]="course.img" alt="" class="thumbnail">
+          <div class="course-text">
+            <h3>{{course.title}}</h3>
+            {{course.description}}
+        </div>
+      </nb-card-body>
+    </nb-card>
+  <!-- </a> -->
+</div>

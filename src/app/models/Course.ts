@@ -7,4 +7,9 @@ export class Course implements ICourse {
   description: string;
   imgUri: string;
   lessons: ILesson[] = [];
+  img: string;
+  public get fullImgUrl() {
+    return `/api/${this.img}`;
+  }
+
 }
