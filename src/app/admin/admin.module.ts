@@ -17,6 +17,8 @@ import { EditCourseComponent } from "./admin-courses/edit-course/edit-course.com
 import { EditorModule } from "@tinymce/tinymce-angular";
 import { EditLessonComponent } from "./admin-courses/edit-course/edit-lesson/edit-lesson.component";
 import { EditWholeCourseComponent } from './admin-courses/edit-whole-course/edit-whole-course.component';
+import { FileUploadModule } from 'ng2-file-upload';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { EditWholeCourseComponent } from './admin-courses/edit-whole-course/edit
     NbInputModule,
     NbButtonModule,
     EditorModule,
-    NbToggleModule
+    NbToggleModule,
+    FileUploadModule
   ],
   providers: [AdminMenu]
 })

@@ -12,6 +12,10 @@
     Description:
     <br>
     <textarea nbInput fullWidth placeholder="Description" [(ngModel)]="course.description"></textarea>
+    <br>
+    <br>
+    Thumbnail:
+      <input type="file" ng2FileSelect [uploader]="uploader" />
   </nb-card-body>
 </nb-card>
 

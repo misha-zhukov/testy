@@ -8,6 +8,7 @@ import { Step } from 'src/app/models/Step';
 import { ILesson } from 'src/app/models/ILesson';
 import { Option } from 'src/app/models/Option';
 import { IStep } from 'src/app/models/IStep';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-edit-whole-course',
@@ -24,6 +25,8 @@ export class EditWholeCourseComponent implements OnInit {
     toolbar:
       "undo redo | bold italic | bullist numlist outdent indent| image link"
   };
+
+  public uploader: FileUploader = new FileUploader({url:'http://localhost:3001/api/upload'});
 
   constructor(
     private coursesService: CoursesService,
@@ -42,6 +45,7 @@ export class EditWholeCourseComponent implements OnInit {
   }
 
   saveCourse(event) {
+    this.uploader.uploadAll();
     this.coursesService.updateCourse(this.course).subscribe(data => {
       data;
     });

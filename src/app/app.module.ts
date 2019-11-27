@@ -16,7 +16,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CourseDataService } from "./services/course-data.service";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule,
