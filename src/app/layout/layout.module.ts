@@ -11,9 +11,10 @@ import {
   NbButtonModule
 } from "@nebular/theme";
 import { NbIconModule } from "@nebular/theme";
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent],
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     NbCardModule,
@@ -23,6 +24,6 @@ import { NbIconModule } from "@nebular/theme";
     NbButtonModule,
     NbIconModule
   ],
-  exports: [LayoutComponent, HeaderComponent]
+  exports: [LayoutComponent, HeaderComponent, FooterComponent]
 })
 export class LayoutModule {}
