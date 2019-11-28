@@ -13,19 +13,17 @@
     height: 35rem;
     position: relative;
     max-width: 50rem;
-
+    justify-content: space-between;
   }
 
   .collage-container {
     display: block;
     position: relative;
     flex-basis: 50%;
-    margin-right: 12%;
     margin-top: 2rem;
   }
 
   .form-container {
-    padding: 2rem 1rem 1rem;
     width: auto;
     display: flex;
   }
