@@ -8,7 +8,8 @@ import {
   NbMenuModule,
   NbSidebarModule,
   NbThemeModule,
-  NbToastrModule
+  NbToastrModule,
+  NbGlobalLogicalPosition
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { CoursesService } from "./services/courses.service";
@@ -30,7 +31,7 @@ import { CourseDataService } from "./services/course-data.service";
     }),
     NbEvaIconsModule,
     HttpClientModule,
-    NbToastrModule.forRoot()
+    NbToastrModule.forRoot({position: NbGlobalLogicalPosition.BOTTOM_END})
   ],
   providers: [CoursesService, CourseDataService],
   bootstrap: [AppComponent]
