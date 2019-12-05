@@ -57,8 +57,8 @@ export class EditLessonComponent implements OnInit {
   }
 
   saveLesson(event) {
-    this.coursesService.updateLesson(this.lesson).subscribe(data => {
-      data;
-    });
+    // this.coursesService.updateLesson(this.lesson).subscribe(data => {
+    //   data;
+    // });
   }
 }
