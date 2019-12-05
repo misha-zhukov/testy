@@ -9,6 +9,7 @@ import { ILesson } from 'src/app/models/ILesson';
 import { Option } from 'src/app/models/Option';
 import { IStep } from 'src/app/models/IStep';
 import { FileUploader } from 'ng2-file-upload';
+import { NbToastrService } from '@nebular/theme';
 
 @Component({
   selector: 'app-edit-whole-course',
@@ -30,7 +31,8 @@ export class EditWholeCourseComponent implements OnInit {
 
   constructor(
     private coursesService: CoursesService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private toasterService: NbToastrService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -46,8 +48,28 @@ export class EditWholeCourseComponent implements OnInit {
 
   saveCourse(event) {
     this.uploader.uploadAll();
+    if(this.course._id) {
+      this.updateCourse(this.course);
+    } else {
+      this.createCourse(this.course);
+    }
+  }
+
+  updateCourse(course){
     this.coursesService.updateCourse(this.course).subscribe(data => {
-      data;
+      this.toasterService.success('', 'Course updated');
+    },
+    error => {
+      this.toasterService.warning = error;
+    });
+  }
+
+  createCourse(course){
+    this.coursesService.createCourse(this.course).subscribe(data => {
+      this.toasterService.show('', 'Course created');
+    },
+    error => {
+      this.toasterService.warning = error;
     });
   }
 

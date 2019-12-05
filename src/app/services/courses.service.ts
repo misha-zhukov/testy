@@ -38,4 +38,8 @@ export class CoursesService {
   updateCourse(course: ICourse): Observable<any> {
     return this.http.put(`${environment.apiUrl}/course`, course);
   }
+
+  createCourse(course: ICourse): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/course`, course);
+  }
 }

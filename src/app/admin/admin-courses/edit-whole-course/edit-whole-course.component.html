@@ -23,11 +23,9 @@
   <button nbButton (click)="addLesson($event)" class="btn-add-lesson">Add lesson</button>
 </div>
 
-Lessons:
+<h4 *ngIf="course?.lessons.length > 0">Lessons</h4>
   <nb-card *ngFor="let lesson of course?.lessons">
     <nb-card-body>
-        lesson:
-      <br>
       <input nbInput placeholder="Title" [(ngModel)]="lesson.title">
     </nb-card-body>
     <div class="btn-container">
