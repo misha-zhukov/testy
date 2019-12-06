@@ -12,12 +12,13 @@ import { ListCoursesComponent } from './components/list-courses/list-courses.com
 import { PricingComponent } from './components/pricing/pricing.component';
 import {
   NbCardModule,
+  NbButtonModule
 } from "@nebular/theme";
 
 const COMPONENTS = [NgxValidationMessageComponent];
 
 @NgModule({
-  imports: [FormsModule, CommonModule, NbCardModule],
+  imports: [FormsModule, CommonModule, NbCardModule, NbButtonModule],
   exports: [...COMPONENTS],
   declarations: [...COMPONENTS, ListCoursesComponent, PricingComponent]
 })

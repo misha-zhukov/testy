@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LandingComponent } from './landing.component';
 import { ListCoursesComponent } from '../shared/components/list-courses/list-courses.component';
+import { PricingComponent } from '../shared/components/pricing/pricing.component';
 import { LandingContentComponent } from './landing-content/landing-content.component';
 
 const routes: Routes = [{
@@ -10,10 +11,13 @@ const routes: Routes = [{
   children: [{
       path: '',
       component: LandingContentComponent
-    }
-    ,{
+    },{
     path: 'list-courses',
     component: ListCoursesComponent
+  },
+  {
+    path: 'pricing',
+    component: PricingComponent
   }
   ],
 },

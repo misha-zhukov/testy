@@ -10,7 +10,7 @@
 </div>
 
 <div class="header-container">
-  <button nbButton outline status="primary" class="header-item button">Upgrade to Pro</button>
+  <button nbButton outline status="primary" class="header-item button" [routerLink]="['/landing/pricing']">Upgrade to Pro</button>
   <b><a [routerLink]="['/auth/login']" status="basic" class="header-item">Log in</a></b>
   <button nbButton [routerLink]="['/auth/register']" class="header-item button">Sign up</button>
 </div>
