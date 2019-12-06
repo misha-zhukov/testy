@@ -1,5 +1,9 @@
 @import '../../../styles/themes.scss';
 
+.title-container {
+  text-align: center;
+}
+
 .card-header {
   text-align: center;
 }
@@ -7,6 +11,35 @@
 .pricing-container {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 100%;
+  margin-top: 5rem;
 }
 
+.pricing-content {
+  display: flex;
+  width: 60%;
+}
+
+.pricing-card-basic {
+  width: 45%;
+}
+
+.pricing-card-pro {
+  width: 55%;
+}
+
+.feature-list {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+.feature-basic {
+  font-size: large;
+  padding: 0.5rem 0;
+}
+
+.feature-pro {
+  font-size: large;
+  padding: 0.5rem 0;
+}

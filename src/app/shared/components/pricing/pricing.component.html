@@ -1,26 +1,50 @@
-
-<div class="cont">
+<div class="title-container">
+  <h1>Our plans</h1>
+</div>
 
 <div class="pricing-container">
-  <nb-card class="pricing-card">
-    <nb-card-header class="card-header">Nebula</nb-card-header>
-    <nb-card-body>
-      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-      Originally, nebula was a name for any diffuse astronomical object,
-      including galaxies beyond the Milky Way.
-    </nb-card-body>
-  </nb-card>
+  <div class="pricing-content">
+    <nb-card class="pricing-card-basic">
+      <nb-card-header class="card-header">
+        <h4>BASIC</h4>
+      </nb-card-header>
+      <nb-card-header class="card-header">
+        <h2 class="price">$0</h2>
+        Interactive lessons &
+        daily practice
+      </nb-card-header>
+      <nb-card-body>
+        <ul class="feature-list">
+          <li *ngFor="let feature of freeFeatures" class="feature-basic">
+            {{ feature }}
+          </li>
+        </ul>
+      </nb-card-body>
+      <nb-card-footer>
+        <button nbButton fullWidth status="basic" class="button">Sign up</button>
+      </nb-card-footer>
+    </nb-card>
 
-  <nb-card class="pricing-card" accent="success" style="margin-left: 5rem;">
-    <nb-card-header class="card-header">Nebula</nb-card-header>
-    <nb-card-body>
-      A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-      Originally, nebula was a name for any diffuse astronomical object,
-      including galaxies beyond the Milky Way.
-      <button nbButton fullWidth status="success" class="button">Sign up</button>
-    </nb-card-body>
-  </nb-card>
+    <nb-card class="pricing-card-pro" accent="success" style="margin-left: 5rem;">
+      <nb-card-header class="card-header">
+        <h2>PRO</h2>
+      </nb-card-header>
+      <nb-card-header class="card-header">
+        <h1 class="price">$9 / month</h1>
+        Learn, practice &
+        apply job-ready skills
+      </nb-card-header>
+      <nb-card-body>
+        <ul class="feature-list">
+          <li *ngFor="let feature of proFeatures" class="feature-pro">
+            {{ feature }}
+          </li>
+        </ul>
+      </nb-card-body>
+      <nb-card-footer>
+        <button nbButton fullWidth status="success" class="button">Sign up</button>
+      </nb-card-footer>
+    </nb-card>
 
+  </div>
 </div>
-</div>
-
