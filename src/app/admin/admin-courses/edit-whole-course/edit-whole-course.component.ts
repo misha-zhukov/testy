@@ -56,7 +56,7 @@ export class EditWholeCourseComponent implements OnInit {
   }
 
   updateCourse(course){
-    this.coursesService.updateCourse(this.course).subscribe(data => {
+    this.coursesService.updateCourse(course).subscribe(data => {
       this.toasterService.success('', 'Course updated');
     },
     error => {
@@ -65,7 +65,7 @@ export class EditWholeCourseComponent implements OnInit {
   }
 
   createCourse(course){
-    this.coursesService.createCourse(this.course).subscribe(data => {
+    this.coursesService.createCourse(course).subscribe(data => {
       this.toasterService.show('', 'Course created');
     },
     error => {
