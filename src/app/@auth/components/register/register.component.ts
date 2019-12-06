@@ -43,7 +43,7 @@ export class NgxRegisterComponent implements OnInit {
   get fullName() { return this.registerForm.get('fullName'); }
   get email() { return this.registerForm.get('email'); }
   get password() { return this.registerForm.get('password'); }
-  get confirmPassword() { return this.registerForm.get('confirmPassword'); }
+  // get confirmPassword() { return this.registerForm.get('confirmPassword'); }
   get terms() { return this.registerForm.get('terms'); }
 
   ngOnInit(): void {
@@ -66,7 +66,7 @@ export class NgxRegisterComponent implements OnInit {
       fullName: this.fb.control('', [...fullNameValidators]),
       email: this.fb.control('', [...emailValidators]),
       password: this.fb.control('', [...passwordValidators]),
-      confirmPassword: this.fb.control('', [...passwordValidators]),
+      // confirmPassword: this.fb.control('', [...passwordValidators]),
       terms: this.fb.control(''),
     });
   }
