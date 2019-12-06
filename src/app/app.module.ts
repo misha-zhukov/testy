@@ -15,6 +15,7 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { CoursesService } from "./services/courses.service";
 import { HttpClientModule } from "@angular/common/http";
 import { CourseDataService } from "./services/course-data.service";
+import { AuthModule } from './@auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent
@@ -31,7 +32,8 @@ import { CourseDataService } from "./services/course-data.service";
     }),
     NbEvaIconsModule,
     HttpClientModule,
-    NbToastrModule.forRoot({position: NbGlobalLogicalPosition.BOTTOM_END})
+    NbToastrModule.forRoot({position: NbGlobalLogicalPosition.BOTTOM_END}),
+    AuthModule.forRoot(),
   ],
   providers: [CoursesService, CourseDataService],
   bootstrap: [AppComponent]

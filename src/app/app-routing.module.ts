@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'course',
     loadChildren: () => import('./course/course.module')
       .then(m => m.CourseModule)
+  },{
+    path: 'auth',
+    loadChildren: () => import('./@auth/auth.module')
+      .then(m => m.AuthModule),
   },
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: '**', redirectTo: 'landing' },
