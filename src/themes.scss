@@ -3,6 +3,6 @@
 
 $nb-themes: nb-register-theme((header-height: 4rem,
     layout-padding: 0 0 0,
-    font-family-primary: "Nunito Sans",
-    font-family-secondary: "Nunito Sans"
+    font-family-primary: unquote('Nunito Sans, Open Sans, sans-serif'),
+    font-family-secondary: unquote('Nunito Sans, Open Sans, sans-serif'),
   ), default, default);
