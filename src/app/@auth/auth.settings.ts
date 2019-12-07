@@ -4,63 +4,71 @@
  * See LICENSE_SINGLE_APP / LICENSE_MULTI_APP in the 'docs' folder for license information on type of purchased license.
  */
 
-import { NbPasswordAuthStrategy } from '@nebular/auth';
-import { environment } from '../../environments/environment';
+import { NbPasswordAuthStrategy } from "@nebular/auth";
+import { environment } from "../../environments/environment";
 
 export const socialLinks = [
   {
-    url: '#',
-    target: '_blank',
-    icon: 'github',
+    url: "#",
+    target: "_blank",
+    icon: "github"
   },
   {
-    url: '#',
-    target: '_blank',
-    icon: 'facebook',
+    url: "#",
+    target: "_blank",
+    icon: "facebook"
   },
   {
-    url: '#',
-    target: '_blank',
-    icon: 'twitter',
-  },
+    url: "#",
+    target: "_blank",
+    icon: "twitter"
+  }
 ];
 
 export const authOptions = {
   strategies: [
     NbPasswordAuthStrategy.setup({
-      name: 'email',
+      name: "email",
       baseEndpoint: environment.apiUrl,
       token: {
-        key: 'token',
+        key: "token"
       },
       login: {
-        endpoint: '/auth/login',
-        method: 'post',
+        endpoint: "/auth/login",
+        method: "post",
+        redirect: {
+          success: "/dashboard/",
+          failure: null // stay on the same page
+        }
       },
       register: {
-        endpoint: '/auth/sign-up',
-        method: 'post',
+        endpoint: "/auth/sign-up",
+        method: "post",
+        redirect: {
+          success: "/welcome/",
+          failure: null // stay on the same page
+        }
       },
       logout: {
-        endpoint: '/auth/sign-out',
-        method: 'post',
+        endpoint: "/auth/sign-out",
+        method: "post"
       },
       requestPass: {
-        endpoint: '/auth/request-pass',
-        method: 'post',
+        endpoint: "/auth/request-pass",
+        method: "post"
       },
       resetPass: {
-        endpoint: '/auth/reset-pass',
-        method: 'post',
-      },
-    }),
+        endpoint: "/auth/reset-pass",
+        method: "post"
+      }
+    })
   ],
   forms: {
     login: {
-      socialLinks: socialLinks,
+      socialLinks: socialLinks
     },
     register: {
-      socialLinks: socialLinks,
-    },
-  },
+      socialLinks: socialLinks
+    }
+  }
 };
