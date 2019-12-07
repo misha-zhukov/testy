@@ -1,6 +1,8 @@
 @import '~@nebular/theme/styles/theming';
 @import '~@nebular/theme/styles/themes/default';
 
-$nb-themes: nb-register-theme((
-  header-height: 4rem
-), default, default);
+$nb-themes: nb-register-theme((header-height: 4rem,
+    layout-padding: 0 0 0,
+    font-family-primary: "Nunito Sans",
+    font-family-secondary: "Nunito Sans"
+  ), default, default);
