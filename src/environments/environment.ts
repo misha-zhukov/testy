@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiUrl: '/api/v1',
+  apiUrl: "/api/v1",
   production: false,
+  stripePublicKey: "pk_test_s1TsNxa5wYOclTm1prEj97aT00K1KrTkQK"
 };
 
 /*
